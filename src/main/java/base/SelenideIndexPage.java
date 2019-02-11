@@ -2,13 +2,14 @@ package base;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.internal.*;
 
 import static com.codeborne.selenide.Selenide.page;
 
 public class SelenideIndexPage {
 
     @FindBy(css = "[id='user-icon']")
-    private SelenideElement loginIcon;
+    public SelenideElement loginIcon;
 
     @FindBy(css = "[id='name']")
     private SelenideElement userField;
@@ -44,3 +45,4 @@ public class SelenideIndexPage {
         return userName;
     }
 }
+
