@@ -1,23 +1,4 @@
 package homeworks.hw2.ex3;
-/*
-TASK
-
-Exercise 3:
-1.	Copy your HW1 test and refactor it in a such way that the test uses all annotations and instructions listed below. Each annotation can contain the only 1 instruction.
-2.	Create a dedicated TestNG config for particular test.
-@BeforeSuite
-@AfterMethod
-@BeforeMethod
-@BeforeClass - check
-@AfterSuite
-@AfterClass
-setProperty("webdriver.chrome.driver", driverPath); - check
-WebDriver driver = new ChromeDriver(); - check
-System.out.println(driver.getTitle()); - check
-driver.manage().window().maximize(); - check
-System.out.println(System.currentTimeMillis()); - check
-driver.close()
- */
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

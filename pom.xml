@@ -54,7 +54,8 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\test\java\homeworks\hw2\testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\java\homeworks\hw2\ex2\testngSmoke.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\java\homeworks\hw2\ex2\testngRefression.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
 
