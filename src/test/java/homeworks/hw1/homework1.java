@@ -99,8 +99,13 @@ public class homework1 {
         driver.switchTo().parentFrame();
         assertTrue(driver.findElement(By.className("footer-bg")).isDisplayed());
 
+        //15 Assert that there is Left Section
+        assertTrue(driver.findElement(By.xpath("//*[@id=\"mCSB_1\"]")).isDisplayed());
+
+        //16 Assert that there is Footer
+        assertTrue(driver.findElement(By.cssSelector("[class='footer-bg']")).isDisplayed());
+
         //17  Close Browser
         driver.quit();
-
-}
+    }
 }

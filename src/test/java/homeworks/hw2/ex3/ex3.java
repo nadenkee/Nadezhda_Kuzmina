@@ -45,7 +45,6 @@ public class ex3 {
     @BeforeMethod
     public void showTime () {
         driver.manage().window().maximize(); //развернули окно браузера максимально
-
     }
 
     @Test
@@ -62,7 +61,6 @@ public class ex3 {
 
         //2 Assert Browser title
         assertEquals(driver.getTitle(), PageName);
-        System.out.println(driver.getTitle());
 
         //3 Perform login
         driver.findElement(By.cssSelector("[id='user-icon']")).click();
@@ -129,20 +127,25 @@ public class ex3 {
         driver.switchTo().parentFrame();
         assertTrue(driver.findElement(By.className("footer-bg")).isDisplayed());
 
+        //15 Assert that there is Left Section
+        assertTrue(driver.findElement(By.xpath("//*[@id=\"mCSB_1\"]")).isDisplayed());
+
+        //16 Assert that there is Footer
+        assertTrue(driver.findElement(By.cssSelector("[class='footer-bg']")).isDisplayed());
     }
 
     @AfterMethod
     public void AfterMethod () {
-        System.out.println(System.currentTimeMillis());
+        System.out.println(driver.getTitle());
     }
 
     @AfterClass
     public void AfterClass () {
-        driver.close();
+        driver.quit ();
     }
 
     @AfterSuite
     public void AfterSuite () {
-        driver.quit ();
+        System.out.println(System.currentTimeMillis());
     }
 }
