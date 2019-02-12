@@ -2,7 +2,6 @@ package base;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.internal.*;
 
 import static com.codeborne.selenide.Selenide.page;
 
