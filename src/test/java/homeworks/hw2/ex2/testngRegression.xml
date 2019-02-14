@@ -1,19 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TestNG Suite" parallel="methods" thread-count="3" >
+<suite name="TestNG Suite" parallel="methods" thread-count="3">
 
-     <test name="Regression">
+    <test name="Regression">
+        <!--TODO This files should not be here, take a look on resources folder-->
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
 
-         <groups>
-             <run>
-                 <include name="regression"/>
-             </run>
-         </groups>
+        <packages>
+            <package name="homeworks.hw2.ex2"/>
+        </packages>
 
-         <packages>
-             <package name="homeworks.hw2.ex2"/>
-         </packages>
-
-     </test>
+    </test>
 
 </suite>
