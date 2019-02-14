@@ -1,18 +1,47 @@
 package base;
 
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Selenide.open;
-import java.util.List;
+import static com.codeborne.selenide.Selenide.page;
 
 public class SelenideIndexPage {
 
+    @FindBy(css = "[id='user-icon']")
+    public SelenideElement loginIcon;
 
-  //  @FindBy
+    @FindBy(css = "[id='name']")
+    private SelenideElement userField;
 
+    @FindBy(css = "[id='password']")
+    private SelenideElement passwordField;
 
-    public void opennIndexPage () {
-        open ("https://epam.github.io/JDI/index.html");
+    @FindBy(css = "[id='login-button']")
+    private SelenideElement submitButton;
 
+    @FindBy(id = "user-name")
+    private SelenideElement userName;
+
+    public SelenideIndexPage() {
+        page(this);
+    }
+
+    public void login(String name, String password) {
+        loginIcon.click();
+        userField.sendKeys(name);
+        passwordField.sendKeys(password);
+        submitButton.click();
+    }
+
+    public void login(User user) {
+        loginIcon.click();
+        userField.sendKeys(user.login);
+        passwordField.sendKeys(user.password);
+        submitButton.click();
+    }
+
+    public SelenideElement getUserName() {
+        return userName;
     }
 }
+
