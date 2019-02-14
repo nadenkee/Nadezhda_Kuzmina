@@ -24,9 +24,10 @@ import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
 
+// TODO Code convention, reformat your code via IDEA
 public class AssertWithDataProvider {
 
-    String WEBADDR = "https://epam.github.io/JDI/index.html";
+    String WEB_ADDR = "https://epam.github.io/JDI/index.html";
     WebDriver driver = new ChromeDriver();
 
     @BeforeClass
@@ -34,6 +35,8 @@ public class AssertWithDataProvider {
         setProperty ("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
     }
 
+    // TODO It is not really great idea to store xpath here.
+    // TODO You can pass only the indexes, for example
     @DataProvider(parallel = true)
     public Object [][] correctData () {
         String firstText = "To include good practices\n" +
@@ -55,9 +58,8 @@ public class AssertWithDataProvider {
     }
 
     @Test(dataProvider ="correctData")
-    public void SimpleTest (String path, String text)
-    {
-        driver.navigate().to(WEBADDR);
+    public void SimpleTest (String path, String text)    {
+        driver.navigate().to(WEB_ADDR);
         driver.manage().window().maximize(); //развернули окно браузера максимально
         assertEquals(driver.findElement(By.xpath(path)).getText(), text);
     }
