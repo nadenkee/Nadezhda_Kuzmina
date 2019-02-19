@@ -29,8 +29,5 @@ public class SimpleTest extends SeleniumBase {
 
     }
 
-    @Test
-    public void Test2 () {
-        indexPage.navigateMenu(); //тесты создаются сначала вот тут, а потом уже подсоздаются для них методы
-    }
+
 }

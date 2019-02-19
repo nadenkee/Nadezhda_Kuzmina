@@ -15,18 +15,18 @@ public class RegressionTests {
         //0 Preparations
         setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         String NAME = "PITER CHAILOVSKII";
-        String WEBADDR = "https://epam.github.io/JDI/index.html";
-        String PageName = "Home Page";
-        String textCenter = "EPAM FRAMEWORK WISHES…";
-        String textMainTitle = "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.";
+        String WEB_ADDR = "https://epam.github.io/JDI/index.html";
+        String PAGE_NAME = "Home Page";
+        String TEXT_CENTER = "EPAM FRAMEWORK WISHES…";
+        String TEXT_MAIN_TITLE = "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.";
 
         //1 Open test site by URL
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize(); //развернули окно браузера максимально
-        driver.navigate().to(WEBADDR);
+        driver.navigate().to(WEB_ADDR);
 
         //2 Assert Browser title
-        assertEquals(driver.getTitle(), PageName);
+        assertEquals(driver.getTitle(), PAGE_NAME);
 
         //3 Perform login
         driver.findElement(By.cssSelector("[id='user-icon']")).click();
@@ -39,7 +39,7 @@ public class RegressionTests {
         assertEquals(driver.findElement(By.id("user-name")).getText(), NAME);
 
         //5 Assert Browser title
-        assertEquals(driver.getTitle(), PageName);
+        assertEquals(driver.getTitle(), PAGE_NAME);
 
         //6 Assert that there are 4 items on the header section are displayed and they have proper texts
         assertEquals(driver.findElement(By.linkText("HOME")).getText(), "HOME");
@@ -69,10 +69,10 @@ public class RegressionTests {
 
         //9 Assert a text of the main headers
         assertTrue(driver.findElement(By.cssSelector("[class='main-title text-center']")).isDisplayed());
-        assertEquals(driver.findElement(By.cssSelector("[class='main-title text-center']")).getText(), textCenter);
+        assertEquals(driver.findElement(By.cssSelector("[class='main-title text-center']")).getText(), TEXT_CENTER);
 
         assertTrue(driver.findElement(By.cssSelector("[class='main-txt text-center']")).isDisplayed());
-        assertEquals(driver.findElement(By.cssSelector("[class='main-txt text-center']")).getText(), textMainTitle);
+        assertEquals(driver.findElement(By.cssSelector("[class='main-txt text-center']")).getText(), TEXT_MAIN_TITLE);
 
         //10 Assert that there is the iframe in the center of page
         assertTrue(driver.findElement(By.id("iframe")).isDisplayed());
@@ -89,7 +89,7 @@ public class RegressionTests {
 
         //14 Assert that JDI GITHUB is a link and has a proper URL
         driver.findElement(By.linkText("JDI GITHUB")).click();
-        assertEquals(driver.getCurrentUrl(), WEBADDR);
+        assertEquals(driver.getCurrentUrl(), WEB_ADDR);
         driver.switchTo().parentFrame();
         assertTrue(driver.findElement(By.className("footer-bg")).isDisplayed());
 

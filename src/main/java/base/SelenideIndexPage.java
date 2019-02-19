@@ -1,6 +1,7 @@
 package base;
 
 import com.codeborne.selenide.SelenideElement;
+import homeworks.enums.User;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Selenide.page;
