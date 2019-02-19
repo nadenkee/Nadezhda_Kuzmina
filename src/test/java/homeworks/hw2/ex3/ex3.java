@@ -23,8 +23,12 @@ public class ex3 {
         driver = new ChromeDriver();
     }
 
+    // TODO Code convention ?
+    // TODO You can reformat your code via IDEA before commit.
     @BeforeMethod
     public void showTime () {
+        // TODO Only eng allowed
+        // TODO As far as I understand, this method has not 'showTime'
         driver.manage().window().maximize(); //развернули окно браузера максимально
     }
 

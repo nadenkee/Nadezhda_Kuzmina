@@ -31,6 +31,8 @@ public class ex2 {
         close();
     }
 
+    // TODO As for me, this test wont work. Infinity loop detected somewhere...
+    // TODO Test should be named with reference to it purpose.
     @Test
     public void tests() {
 
@@ -69,7 +71,6 @@ public class ex2 {
 
         //13 Assert that for "From" and "To" sliders there are logs rows with corresponding values
         sliderPage.checkFromAndToInLogs(30, 70);
-
     }
 }
 

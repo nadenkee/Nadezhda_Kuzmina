@@ -31,6 +31,8 @@ public class AssertWithDataProvider {
 
     @DataProvider(parallel = true)
     public Object [][] correctData () {
+        // TODO What is the reason of this local variables ?
+        // TODO Why don't you return array at once ?
         String firstText = "To include good practices\n" +
                 "and ideas from successful\n" +
                 "EPAM project";
@@ -41,6 +43,7 @@ public class AssertWithDataProvider {
                 "(about 20 internal and\n" +
                 "some external projects),\n" +
                 "wish to get more…";
+        // TODO You should not leave comments like this.
 //        String xPathOne = "/html/body/div/div[2]/main/div[2]/div/div[1]/div/span";
 //        String xPathTwo = "/html/body/div/div[2]/main/div[2]/div/div[2]/div/span";
 //        String xPathThree = "/html/body/div/div[2]/main/div[2]/div/div[3]/div/span";

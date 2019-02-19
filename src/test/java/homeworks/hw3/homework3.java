@@ -45,6 +45,7 @@ public class homework3 extends SeleniumBase {
         driver.close();
     }
 
+    // TODO Basically, you should not parametrise PO steps by locators !
     @Test
     public void SimpleTest () {
 
@@ -54,6 +55,7 @@ public class homework3 extends SeleniumBase {
         //2 Assert Browser title
         indexPage.checkTitle(PAGE_NAME);
 
+        // TODO You pass strings here, but in the meantime, you have a User class...
         //3 Perform login
         indexPage.login(NAME, PASSWORD);
 
@@ -70,6 +72,7 @@ public class homework3 extends SeleniumBase {
         indexPage.assertFourImages();
 
         //8 Assert that there are 4 texts on the Index Page under icons and they have proper text
+        // TODO This will be better with one PO method, loop inside
         indexPage.assertTextsWords(1, TEXT_ONE);
         indexPage.assertTextsWords(2, TEXT_TWO);
         indexPage.assertTextsWords(3, TEXT_THREE);

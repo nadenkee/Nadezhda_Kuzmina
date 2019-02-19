@@ -30,7 +30,6 @@ hs_err_pid*
 target/
 homeworks/Tasks.java
 
-# TODO Pay attention
 *.iml
 
 

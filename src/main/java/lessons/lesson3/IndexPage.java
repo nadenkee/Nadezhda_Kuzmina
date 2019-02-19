@@ -12,6 +12,9 @@ import org.testng.Assert;
 import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
+// TODO All homework stuff should be in appropriate package
+// TODO This is completely prohibited to find elements in PO methods
+// TODO You should not hard-code data in PO methods
 public class IndexPage {
 
     @FindBy(css = "[id='user-icon']")

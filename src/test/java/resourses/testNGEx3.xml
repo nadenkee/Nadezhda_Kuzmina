@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="TestNg Suite" parallel="methods" thread-count="3" >
+<suite name="TestNg Suite" parallel="methods" thread-count="3">
 
-    <test name="Hw1TestsWithAnnotations" >
-
+    <test name="Hw1TestsWithAnnotations">
+        <!--TODO You have 2 resource folder, but there can be only ONE (c) !-->
         <classes>
             <class name="homeworks.hw2.ex3.ex3"/>
         </classes>
