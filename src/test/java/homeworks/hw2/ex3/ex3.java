@@ -24,8 +24,8 @@ public class ex3 {
     }
 
     @BeforeMethod
-    public void showTime () {
-        driver.manage().window().maximize(); //развернули окно браузера максимально
+    public void beforeMethod() {
+        driver.manage().window().maximize();
     }
 
     @Test
