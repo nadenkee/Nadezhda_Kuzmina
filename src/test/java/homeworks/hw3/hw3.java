@@ -1,8 +1,8 @@
 package homeworks.hw3;
 
-import base.SeleniumBase;
+import base.lesson6.po.SeleniumBase;
 import homeworks.enums.User;
-import lessons.lesson3.IndexPage;
+import base.IndexPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -11,22 +11,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static homeworks.enums.PageData.*;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-/*
-TASK
-1.	All previous preconditions are still actual
-2.	Place your homework files to the corresponding paths either in src\main, or src\test.
-Exercise 1:
-1.	Copy your HW1 test to the proper package
-2.	Refactor this test in Page Object design pattern.
-1.	Refactor all locators on short and relative. There is no place for full absolute XPath auto–generated locators.
-2.	Use CSS in each case when it possible otherwise use XPATH (axes and search by text())
-3.	Try to manage correctly the place where you will create a driver instance and where you create an object of your page.
-4.	All actions have to be incapsulated into a Page Object.
-5.	Parametrize exact methods which you decide should be parametrized.
- */
-public class homework3 extends SeleniumBase {
+import static java.lang.System.setProperty;
+
+public class hw3 extends SeleniumBase {
 
     private WebDriver driver;
     private IndexPage indexPage;
@@ -35,6 +22,7 @@ public class homework3 extends SeleniumBase {
 
     @BeforeMethod
     public void BeforeMethod() {
+        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         indexPage = PageFactory.initElements(driver, IndexPage.class);
@@ -42,7 +30,7 @@ public class homework3 extends SeleniumBase {
 
     @AfterMethod
     public void AfterMethod() {
-        driver.close();
+        driver.quit();
     }
 
     @Test
@@ -55,7 +43,7 @@ public class homework3 extends SeleniumBase {
         indexPage.checkTitle(PAGE_NAME);
 
         //3 Perform login
-        indexPage.login(NAME, PASSWORD);
+        indexPage.login(User.PITER);
 
         //4 Assert User name in the left-top side of screen that user is loggined
         indexPage.checkLoginned(User.PITER);
@@ -70,35 +58,31 @@ public class homework3 extends SeleniumBase {
         indexPage.assertFourImages();
 
         //8 Assert that there are 4 texts on the Index Page under icons and they have proper text
-        indexPage.assertTextsWords(1, TEXT_ONE);
-        indexPage.assertTextsWords(2, TEXT_TWO);
-        indexPage.assertTextsWords(3, TEXT_THREE);
-        indexPage.assertTextsWords(4, TEXT_FOUR);
+        indexPage.assertTextsWords();
 
         //9 Assert a text of the main headers
-        indexPage.assertTextHeaders("[class='main-title text-center']", TEXT_CENTER);
-        indexPage.assertTextHeaders("[class='main-txt text-center']", TEXT_MAIN_TITLE);
+        indexPage.assertTextHeaders();
 
         //10 Assert that there is the iframe in the center of page
-        indexPage.assertFrame("iframe");
+        indexPage.assertFrame();
 
         //11 Switch to the iframe and check Epam logo is in the left top conner of iframe
-        indexPage.switchFrameEPAMLogo("iframe", "epam-logo");
+        indexPage.switchFrameEPAMLogo();
 
         //12 Switch to original window back
         indexPage.switchDef();
 
         //13 Assert a text of the sub header
-        indexPage.assertSubHeader("JDI GITHUB");
+        indexPage.assertSubHeader();
 
         //14 Assert that JDI GITHUB is a link and has a proper URL
-        indexPage.assertProperURL("JDI GITHUB", WEB_ADDR, "footer-bg");
+        indexPage.assertProperURL(WEB_ADDR);
 
         //15 Assert that there is Left Section
-        indexPage.assertByXPath("//*[@id=\"mCSB_1\"]");
+        indexPage.assertByXPath();
 
         //16 Assert that there is Footer
-        indexPage.assertByCSS("[class='footer-bg']");
+        indexPage.assertByCSS();
 
         //17  Close Browser
         indexPage.close();
