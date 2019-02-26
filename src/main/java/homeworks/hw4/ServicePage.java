@@ -1,4 +1,4 @@
-package base.hw4;
+package homeworks.hw4;
 
 import homeworks.enums.User;
 import com.codeborne.selenide.ElementsCollection;
@@ -35,7 +35,7 @@ public class ServicePage {
     @FindBy(css = "[id='login-button']")
     private SelenideElement submitButton;
 
-    @FindBy(css = "ul.uui-navigation.nav.navbar-nav.m-l8 li.dropdown")
+    @FindBy(css = "[class='dropdown-toggle']")
     private SelenideElement serviceOnHeader;
 
     @FindBy(css = "[class='dropdown-menu'] li")

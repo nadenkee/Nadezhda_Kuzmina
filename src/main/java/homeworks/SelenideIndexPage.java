@@ -1,4 +1,4 @@
-package base;
+package homeworks;
 
 import com.codeborne.selenide.SelenideElement;
 import homeworks.enums.User;

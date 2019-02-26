@@ -1,4 +1,4 @@
-package base.hw4;
+package homeworks.hw4;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -21,17 +21,17 @@ import static org.testng.Assert.assertTrue;
             SelenideElement rightSlider = sliders.get(1);
             moveSliderLeftEnd(leftSlider);
             moveSliderRightEnd(rightSlider);
-            int step = step();
+//            int step = step();
             moveSliderLeftEnd(rightSlider);
             if (right == 100) {
                 moveSliderRightEnd(rightSlider);
             } else {
-                moveSlider(rightSlider, right, step);
+                moveSlider(rightSlider, right);
             }
             if (left == 100) {
                 moveSliderRightEnd(leftSlider);
             } else {
-                moveSlider(leftSlider, left, step);
+                moveSlider(leftSlider, left);
             }
         }
 
@@ -44,19 +44,23 @@ import static org.testng.Assert.assertTrue;
             actions().dragAndDropBy(slider, 1000, 0).build().perform();
         }
 
-        public void moveSlider(SelenideElement slider, int set, int step) {
+        public void moveSlider(SelenideElement slider, int set) {
+            int step = 1;
             int actualValue = Integer.valueOf(slider.getText());
+            if (set < actualValue) {
+                step = -1;
+            }
             while (actualValue != set) {
                 actions().dragAndDropBy(slider, step, 0).build().perform();
-                actualValue = Integer.valueOf(slider.getText());
+                actualValue = Integer.valueOf(slider.getText()) - 1;
             }
         }
 
-        public int step() {
-            moveSliderRightEnd(sliders.get(1));
-            moveSliderLeftEnd(sliders.get(0));
-            return (sliders.get(1).getLocation().getX() - sliders.get(0).getLocation().getX()) / 100;
-        }
+//        public int step() {
+//            moveSliderRightEnd(sliders.get(1));
+//            moveSliderLeftEnd(sliders.get(0));
+//            return (sliders.get(1).getLocation().getX() - sliders.get(0).getLocation().getX()) / 100;
+//        }
 
         public void checkFromAndToInLogs(int left, int right) {
             assertCorrectValues(left, right);

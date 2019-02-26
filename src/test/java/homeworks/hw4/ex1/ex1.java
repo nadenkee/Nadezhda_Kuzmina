@@ -1,8 +1,8 @@
 package homeworks.hw4.ex1;
 
-import base.SelenideBase;
-import base.hw4.ServicePage;
-import base.hw4.SupportPage;
+import base.lesson6.po.SelenideBase;
+import homeworks.hw4.ServicePage;
+import homeworks.hw4.SupportPage;
 import homeworks.enums.User;
 import com.codeborne.selenide.Selenide;
 import homeworks.enums.SubData;
@@ -35,7 +35,7 @@ public class ex1 extends SelenideBase {
         }
 
         @Test
-        public void tests() {
+        public void serviceTests() {
 
             //2 Assert Browser title
             servicePage.checkTitle(PAGE_NAME);

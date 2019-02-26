@@ -1,4 +1,4 @@
-package base.hw4;
+package homeworks.hw4;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

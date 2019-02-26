@@ -1,13 +1,13 @@
 package homeworks.hw4.ex2;
 
-import base.hw4.ServicePage;
+import homeworks.hw4.ServicePage;
 import homeworks.enums.User;
 import com.codeborne.selenide.Selenide;
 import homeworks.enums.PageData;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import base.hw4.SliderPage;
+import homeworks.hw4.SliderPage;
 
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.page;
@@ -32,7 +32,7 @@ public class ex2 {
     }
 
     @Test
-    public void tests() {
+    public void sliderTests() {
 
         //2 Assert Browser title
         servicePage.checkTitle(PAGE_NAME);
@@ -69,7 +69,6 @@ public class ex2 {
 
         //13 Assert that for "From" and "To" sliders there are logs rows with corresponding values
         sliderPage.checkFromAndToInLogs(30, 70);
-
     }
 }
 
