@@ -1,4 +1,4 @@
-package homeworks;
+package homeworks.hw6.pages;
 
 
 import homeworks.enums.User;

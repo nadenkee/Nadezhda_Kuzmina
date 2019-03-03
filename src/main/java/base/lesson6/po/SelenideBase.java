@@ -1,4 +1,4 @@
-package base;
+package base.lesson6.po;
 
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;

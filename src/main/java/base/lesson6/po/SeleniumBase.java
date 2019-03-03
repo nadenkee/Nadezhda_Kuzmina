@@ -1,4 +1,4 @@
-package base;
+package base.lesson6.po;
 
 import org.openqa.selenium.*;
 import org.testng.Assert;

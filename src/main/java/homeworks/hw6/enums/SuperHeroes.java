@@ -1,26 +1,26 @@
 package homeworks.hw6.enums;
 
 public enum SuperHeroes {
-    ROMAN("Roman", "roman"),
-    IVAN("Sergey Ivan", "ivan"),
-    VLAD("Vladzimir", "vlad"),
-    HELEN("Helen Bennett", "helen"),
-    YOSHI("Yoshi Tannamuri", "yoshi"),
-    GIO("Giovanni Rovelli", "gio");
+    ROMAN(1, "Roman"),
+    SERGEY(2, "Sergey Ivan"),
+    VLADZIMIR(3, "Vladzimir"),
+    HELEN(4, "Helen Bennett"),
+    YOSHI(5, "Yoshi Tannamuri"),
+    GIOVANNI(6, "Giovanni Rovelli");
 
-    public String name;
-    public String id;
+    private int numberType;
+    private String user;
 
-    SuperHeroes(String name, String id) {
-        this.id = id;
-        this.name = name;
+    SuperHeroes(int numberType, String user) {
+        this.numberType = numberType;
+        this.user = user;
     }
 
-    public static SuperHeroes getUsersTable(String value) {
-        for (SuperHeroes line : SuperHeroes.values()) {
-            if (line.name.equals(value))
-                return line;
-        }
-        return null;
+    public int getNumberType() {
+        return numberType;
+    }
+
+    public String getUser() {
+        return user;
     }
 }
