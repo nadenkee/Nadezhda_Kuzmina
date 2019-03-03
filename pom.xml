@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>epam.com</groupId>
-    <artifactId>automation-winter-2019</artifactId>
+    <artifactId>NK Simple Project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -57,7 +57,24 @@
             <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>2.10.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>2.12.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>2.10.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
