@@ -2,7 +2,7 @@ package homeworks.hw3;
 
 import base.lesson6.po.SeleniumBase;
 import homeworks.enums.User;
-import base.IndexPage;
+import homeworks.hw6.pages.IndexPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;

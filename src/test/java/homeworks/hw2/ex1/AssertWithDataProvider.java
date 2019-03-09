@@ -3,23 +3,24 @@ package homeworks.hw2.ex1;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import static java.lang.System.setProperty;
 import static org.testng.Assert.assertEquals;
 
 
 public class AssertWithDataProvider {
-
-    private WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     String WEB_ADDR = "https://epam.github.io/JDI/index.html";
+
+    @BeforeSuite
+    public void BeforeSuite() {
+        setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+    }
 
     @BeforeClass
     public void BeforeClass() {
-        setProperty ("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        driver = new ChromeDriver();
     }
 
     @DataProvider(parallel = true)

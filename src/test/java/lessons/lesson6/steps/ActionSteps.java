@@ -1,7 +1,7 @@
 package lessons.lesson6.steps;
 
 
-import base.SelenideIndexPage;
+import homeworks.hw6.pages.SelenideIndexPage;
 import homeworks.enums.User;
 import cucumber.api.java.en.When;
 

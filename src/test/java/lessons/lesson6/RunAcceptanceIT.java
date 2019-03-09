@@ -1,6 +1,6 @@
-package lessons.lesson6.steps;
+package lessons.lesson6;
 
-//import com.codeborne.selenide.Browsers;  //почему-то не импортится
+import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;

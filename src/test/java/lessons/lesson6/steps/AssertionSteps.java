@@ -4,10 +4,8 @@ package lessons.lesson6.steps;
 //All those steps with THEN annotation
 
 
-import base.SelenideIndexPage;
+import homeworks.hw6.pages.SelenideIndexPage;
 import cucumber.api.java.en.Then;
-
-import java.util.concurrent.locks.Condition;
 
 import static com.codeborne.selenide.Condition.text;
 
@@ -16,4 +14,10 @@ public class AssertionSteps {
     public void userNameShouldBe(String expected) {
            new SelenideIndexPage().getUserName().shouldBe(text(expected));
     }
+
+    @Then("^User name should be as for user '([^\"]*)'$")
+    public void userNameShouldBeAsForUser() {
+
+    }
 }
+
