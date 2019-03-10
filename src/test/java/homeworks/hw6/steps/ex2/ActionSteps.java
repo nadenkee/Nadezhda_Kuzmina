@@ -33,7 +33,7 @@ public class ActionSteps {
     }
 
     @When("^I click on Service button in Header$")
-    public void clickHeaderService() {
+    public void clickService() {
         homePage.clickHeaderService();
     }
 

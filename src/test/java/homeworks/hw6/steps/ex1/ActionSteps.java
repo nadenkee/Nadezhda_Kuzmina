@@ -17,7 +17,7 @@ public class ActionSteps {
     private ServicePage differentElementsPage = page(ServicePage.class);
 
     @And("^I login as user '([^\"]*)'$")
-    public void login(User user) {
+    public void logging(User user) {
         homePage.login(user);
     }
 
@@ -61,5 +61,4 @@ public class ActionSteps {
     public void unselectCheckboxWind(NatureElements wind) {
         differentElementsPage.clickNatureElements(wind);
     }
-
 }
