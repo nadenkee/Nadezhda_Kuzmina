@@ -6,20 +6,16 @@ import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.Css;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.UI;
-import com.epam.jdi.light.ui.html.base.HtmlChecklist;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.common.Checkbox;
 import com.epam.jdi.light.ui.html.common.TextField;
 import com.epam.jdi.light.ui.html.complex.Checklist;
 import com.epam.jdi.light.ui.html.complex.Dropdown;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
-import homeworks.enums.ColorsMetalsData;
 import homeworks.enums.NatureElements;
 import homeworks.enums.Vegs;
 import homeworks.hw7.entities.MetalsAndColors;
-import javafx.scene.control.RadioButton;
 import org.openqa.selenium.WebElement;
-import org.testng.AssertJUnit;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +24,6 @@ import static homeworks.enums.ColorsMetalsData.*;
 import static homeworks.enums.Vegs.VEGETABLES;
 import static homeworks.hw7.entities.MetalsAndColors.TEST_ENTITY;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class MetalsColorsPage {
 
@@ -104,12 +99,6 @@ public class MetalsColorsPage {
     }
 
     public void checkCorrectData(MetalsAndColors results) {
-//        AssertJUnit.assertEquals(SUMMARY.toString(), summary.toString());
-//        AssertJUnit.assertEquals(ELEMENTS.toString(), elements.toString());
-//        AssertJUnit.assertEquals(METALS.toString(), metal.toString());
-//        AssertJUnit.assertEquals(VEGS.toString(), vegs.toString());
-//        AssertJUnit.assertEquals(COLORS.toString(), color.toString());
-
         List<String> logList = resultLog.getAll().stream().map(WebElement::getText).collect(Collectors.toList());
         assertEquals(logList.get(0), "Summary: " + (SUMMARY));
         assertEquals(logList.get(1), "Elements: " + TEST_ENTITY.natureElements[0].toString() + ", " + TEST_ENTITY.natureElements[1].toString());
@@ -121,17 +110,6 @@ public class MetalsColorsPage {
     public void fillForm(MetalsAndColors data) {
         radioEvenButton.select(String.valueOf(data.evenSum));
         radioOddButton.select(String.valueOf(data.oddSum));
-//        waterCheckBox.click();
-//        fireCheckBox.click();
-//        pickColors.select(2);
-//        metalsDropdown.click();
-//        pickMetals.select("Selen");
-//        veggieDropdown.click();
-//        pickVeggies.select("g5", "g6");
-//        pickVeggies.uncheck("g7");
-//        vegetables.click();
-//        vegetables.getSelected().contains("Cucumber");
-//        vegetables.getSelected().contains("Tomato");
         for (NatureElements element : data.natureElements) {
             natureElements.select(element.toString());
         }
@@ -142,12 +120,4 @@ public class MetalsColorsPage {
             vegetablesDrop.select(vegetable.toString());
         }
     }
-
-//    @FindBy(css = "p input[type='checkbox']")
-//    public Checklist checklist = new HtmlChecklist() {
-//        @Override
-//        public void check(String... names) {
-//            super.check(names);
-//        }
-//    };
 }

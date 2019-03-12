@@ -2,7 +2,6 @@ package homeworks.hw7;
 
 import com.epam.jdi.light.driver.WebDriverFactory;
 import com.epam.jdi.light.ui.html.PageFactory;
-import homeworks.enums.ColorsMetalsData;
 import homeworks.hw7.entities.MetalsAndColors;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
