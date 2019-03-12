@@ -19,7 +19,7 @@ public class IndexPageJdi extends WebPage {
     @Css(".m-l8")
     private Menu menu;
 
-    @FindBy(xpath = "li[4]/a")
+    @FindBy(xpath = "/html/body/header/div/nav/ul[1]/li[4]/a")
     private Button metAndCol;
 
     public void login(User user) {

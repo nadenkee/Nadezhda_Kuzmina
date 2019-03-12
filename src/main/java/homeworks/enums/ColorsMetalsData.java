@@ -1,10 +1,10 @@
 package homeworks.enums;
 
 public enum ColorsMetalsData {
-    SUMMARY("Summary: 11"),
+    SUMMARY("11"),
     ELEMENTS("Elements: Water, Fire"),
-    COLORS("Color: Red"),
-    METALS("Metal: Selen"),
+    COLORS("Red"),
+    METALS("Selen"),
     VEGS("Vegetables: Cucumber, Tomato");
 
     private String value;
