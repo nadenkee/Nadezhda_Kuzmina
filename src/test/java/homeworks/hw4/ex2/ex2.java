@@ -31,6 +31,8 @@ public class ex2 {
         close();
     }
 
+    // TODO As for me, this test wont work. Infinity loop detected somewhere...
+    // TODO Test should be named with reference to it purpose.
     @Test
     public void sliderTests() {
 

@@ -1,4 +1,4 @@
-package homeworks.hw2.ex3;
+﻿package homeworks.hw2.ex3;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,9 +23,18 @@ public class ex3 {
         driver = new ChromeDriver();
     }
 
+    // TODO Code convention ?
+    // TODO You can reformat your code via IDEA before commit.
     @BeforeMethod
+
+    public void showTime () {
+        // TODO Only eng allowed
+        // TODO As far as I understand, this method has not 'showTime'
+        driver.manage().window().maximize(); //развернули окно браузера максимально
+
     public void beforeMethod() {
         driver.manage().window().maximize();
+
     }
 
     @Test
