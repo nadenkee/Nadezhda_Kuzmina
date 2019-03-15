@@ -25,11 +25,9 @@ public class homework1 {
 
     @Test
     public void SimpleTest () {
-        //0 Preparations
-
         //1 Open test site by URL
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize(); //развернули окно браузера максимально
+        driver.manage().window().maximize();
         driver.navigate().to(WEB_ADDR);
 
         //2 Assert Browser title

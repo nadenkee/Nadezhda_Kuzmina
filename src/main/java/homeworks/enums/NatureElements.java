@@ -2,7 +2,7 @@ package homeworks.enums;
 
 public enum NatureElements {
     WATER("Water"),
-    Earth("Earth"),
+    EARTH("Earth"),
     WIND("Wind"),
     FIRE("Fire");
 

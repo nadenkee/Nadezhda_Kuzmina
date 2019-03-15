@@ -1,6 +1,6 @@
 package lessons.lesson2;
 
-import base.SeleniumBase;
+import base.lesson6.po.SeleniumBase;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

@@ -1,13 +1,13 @@
 package homeworks.hw4.ex2;
 
-import base.hw4.ServicePage;
+import homeworks.hw4.ServicePage;
 import homeworks.enums.User;
 import com.codeborne.selenide.Selenide;
 import homeworks.enums.PageData;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import base.hw4.SliderPage;
+import homeworks.hw4.SliderPage;
 
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.page;
@@ -34,7 +34,7 @@ public class ex2 {
     // TODO As for me, this test wont work. Infinity loop detected somewhere...
     // TODO Test should be named with reference to it purpose.
     @Test
-    public void tests() {
+    public void sliderTests() {
 
         //2 Assert Browser title
         servicePage.checkTitle(PAGE_NAME);

@@ -8,7 +8,21 @@
     <artifactId>SimpleProject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <domain>http://www.epam.com</domain>
+        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+        <aspectj.version>1.8.12</aspectj.version>
+        <maven.compile.sourse>1.8</maven.compile.sourse>
+        <maven.compiler.targer>1.8</maven.compiler.targer>
+    </properties>
+
     <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+        </dependency>
 
         <dependency>
             <groupId>org.testng</groupId>
@@ -16,11 +30,17 @@
             <version>6.14.3</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.seleniumhq.selenium</groupId>-->
-<!--            <artifactId>selenium-java</artifactId>-->
-<!--            <version>3.141.59</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-light-html</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
 
         <dependency>
             <groupId>com.codeborne</groupId>
@@ -42,28 +62,21 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.epam.jdi</groupId>
-            <artifactId>jdi-light-html</artifactId>
-            <version>LATEST</version>
-        </dependency>
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
 
+        <plugins>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\test\java\homeworks\hw2\ex2\testngSmoke.xml</suiteXmlFile>
-                        <suiteXmlFile>src\test\java\homeworks\hw2\ex2\testngRefression.xml</suiteXmlFile>
+                        <suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
-
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -73,8 +86,34 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
     </build>
 
-</project>
+    <profiles>
+        <profile>
+            <id>DEV</id>
+            <properties>
+                <domain>http://www.dev.epam.com</domain>
+            </properties>
+        </profile>
+        <profile>
+            <id>QA</id>
+            <properties>
+                <domain>http://www.qa.epam.com</domain>
+            </properties>
+        </profile>
+    </profiles>
 
+</project>

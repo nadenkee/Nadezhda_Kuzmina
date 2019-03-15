@@ -1,6 +1,8 @@
 package lessons.lesson3;
 
-import base.SeleniumBase;
+import homeworks.hw6.pages.IndexPage;
+import base.lesson6.po.SeleniumBase;
+import homeworks.enums.User;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -25,7 +27,7 @@ public class SimpleTest extends SeleniumBase {
     @Test
     public void SimmpleTest () {
         indexPage.open();
-        indexPage.login ("Pavel", "12345");
+        indexPage.login(User.PITER);
 
     }
 

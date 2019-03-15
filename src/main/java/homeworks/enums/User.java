@@ -2,24 +2,14 @@ package homeworks.enums;
 
 public enum User {
 
-    PITER("epam", "1234", "PITER CHAILOVSKII");
+    PITER("epam", "1234");
 
     public final String login;
     public final String password;
-    public final String username;
+    public final String username = "PITER CHAILOVSKII";
 
-    User(String login, String password, String username) {
+    User(String login, String password) {
         this.login = login;
         this.password = password;
-        this.username = username;
     }
-
-//    public static User getUserByUserName(String username) {
-//        for (User user : values()) {
-//            if (user.username.equals(username)) {
-//                return user;
-//            }
-//        }
-//        throw new IllegalArgumentException("Wrong user name: " + username);
-//    }
 }
