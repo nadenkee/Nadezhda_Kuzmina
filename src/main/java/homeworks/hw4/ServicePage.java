@@ -35,6 +35,8 @@ public class ServicePage {
     @FindBy(css = "[id='login-button']")
     private SelenideElement submitButton;
 
+    @FindBy(css = "ul.uui-navigation.nav.navbar-nav.m-l8 li.dropdown")
+
     @FindBy(css = "[class='dropdown-toggle']")
     private SelenideElement serviceOnHeader;
 
@@ -66,6 +68,7 @@ public class ServicePage {
         userName.shouldHave(visible, text(user.username));
     }
 
+    // TODO It is not the best idea to mix actions and verifications.
     public void checkHeaderService(SubData[] values) {
         serviceOnHeader.shouldHave(visible);
         serviceOnHeader.click();

@@ -1,4 +1,4 @@
-package homeworks.hw2.ex1;
+﻿package homeworks.hw2.ex1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +25,8 @@ public class AssertWithDataProvider {
 
     @DataProvider(parallel = true)
     public Object [][] correctData () {
+        // TODO What is the reason of this local variables ?
+        // TODO Why don't you return array at once ?
         String firstText = "To include good practices\n" +
                 "and ideas from successful\n" +
                 "EPAM project";
@@ -35,6 +37,12 @@ public class AssertWithDataProvider {
                 "(about 20 internal and\n" +
                 "some external projects),\n" +
                 "wish to get more…";
+
+        int indexOne = 1;
+        int indexTwo = 2;
+        int indexThree = 3;
+        int indexFour = 4;
+
 
         return new Object[][]{
                 {1, firstText},

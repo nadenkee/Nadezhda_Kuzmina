@@ -1,6 +1,7 @@
 package homeworks.enums;
 
 public enum PageData {
+    // TODO The name of enums should be selected with reference to it purpose.
     WEB_ADDR("https://epam.github.io/JDI/index.html"),
     PAGE_NAME("Home Page"),
     DATES_TITLE("Dates"),
