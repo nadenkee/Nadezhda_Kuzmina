@@ -44,12 +44,12 @@ public class MetalForm extends Form<MetalsAndColorsPOJO> {
         for (String s : data.elements) {
             natureElements.select(s);
         }
-        colors.select(data.color);
-        metals.select(data.metals);
         vegetables.select(vegetables.getSelected());
         for (String vegetable : data.vegetables) {
             vegetables.select(vegetable);
         }
+        colors.select(data.color);
+        metals.select(data.metals);
         submitButton.click();
     }
 }

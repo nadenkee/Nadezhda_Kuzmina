@@ -7,10 +7,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -38,6 +35,11 @@ public class DataProviderJDI {
     @AfterSuite
     public void afterSuite() {
         WebDriverFactory.close();
+    }
+
+    @AfterMethod
+    public void afterMethod() {
+        WebDriverFactory.getDriver().manage().deleteAllCookies();
     }
 
     @Test(dataProvider = "getData")
