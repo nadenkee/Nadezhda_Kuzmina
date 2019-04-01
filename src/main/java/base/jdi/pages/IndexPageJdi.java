@@ -1,7 +1,7 @@
 package base.jdi.pages;
 
 import base.jdi.entities.User;
-import base.jdi.forms.LoginForm;
+import homeworks.hw8.forms.LoginForm;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.Css;
